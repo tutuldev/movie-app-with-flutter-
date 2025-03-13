@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/data/movies.dart';
 import 'package:movie_app/model/movie.dart';
+import 'package:movie_app/screens/movie_details.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -38,6 +39,9 @@ class _MyHomePageState extends State<MyHomePage> {
           return Card(
             child: ListTile(
               title: Text(movieList[index].title),
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MovieDetails(movie:movieList[index]),));
+              },
             ),
           );
         },
